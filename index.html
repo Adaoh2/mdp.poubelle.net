@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	<title> G&eacute;n&eacute;rateur de mot de passe </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<script src="script.js">
+
+	</script>
+
+</head>
+
+
+<body>
+	<h1 id="titre">G&eacute;n&eacute;rateur de mot de passe</h1>
+	<div class="content">
+
+		<form novalidate class="panel" selected="true" name="f" method="POST" onSubmit="password.value = b64_sha1(master.value+':'+ site.value.toLowerCase() ).substr(0,longueur.value) +  (nouveau.checked ? 'M7!' : 'M7') + nouveau.value; document.f.password.focus(); document.f.password.select(); return false;">
+
+			<!-- MDP Maitre -->
+			<label>Mot de passe ma&icirc;tre :</label>
+			<input name="master" type="password" />
+			
+			<!-- Nom du site -->
+			<label>Nom du site :</label>
+			<input name="site" type="url" autocorrect="off" autocapitalize="off" type="text" placeholder="Ex. mdp.poubelle.net" />
+		
+			<!-- Longueur du MDP -->
+			<label for="quantity">Longueur du mot de passe</label>
+			<input type="number" pattern="[0-9]*" id="longueur" min="10" max="27" value="10">
+
+			<!-- MDP carac. special -->
+			<input type="checkbox" name="nouveau" value="" /> Mot de passe avec caract&egrave;re sp&eacute;cial
+
+			<br>
+
+			<!-- Bouton Generer -->
+			<button class="ripple" onclick="copier()">G&eacute;n&eacute;rer</button>
+			<input type="hidden" name="ancien" value="" />
+
+			<br>
+			
+			<!-- MDP Final -->
+			<label for="">
+			<h2>R&eacute;sultat</h2>
+			<label>Mot de passe g&eacute;n&eacute;r&eacute; :</label>
+			<input name="password" type="text" readonly id="myInput" />
+			
+			<!-- Copier le MDP -->
+			<button class="ripple" onclick="copier()">Copier</button>
+		</form>
+
+	</div>
+
+<footer> <a href="http://mdp.poubelle.net"><b>mdp.poubelle.net</a></b> est propuls&eacute; par <a href='http://www.poubelle.net'><b>poubelle.net</footer>
+</body>
+</html>
