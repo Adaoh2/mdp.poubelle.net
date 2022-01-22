@@ -11,6 +11,8 @@
 
 	</script>
 
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
 </head>
 
 
@@ -42,15 +44,18 @@
 			<input type="hidden" name="ancien" value="" />
 
 			<br>
-			
-			<!-- MDP Final -->
-			<label for="">
-			<h2>R&eacute;sultat</h2>
-			<label>Mot de passe g&eacute;n&eacute;r&eacute; :</label>
-			<input name="password" type="text" readonly id="myInput" />
-			
-			<!-- Copier le MDP -->
-			<button class="ripple" onclick="copier()">Copier</button>
+            <!-- MDP Final -->
+            <label for="">
+            <h2>R&eacute;sultat</h2>
+            <label>Mot de passe g&eacute;n&eacute;r&eacute; :</label>
+            <div id="MdpGenere">
+                <input name="password" type="text" readonly id="myInput" />
+                
+                <!-- Bouton copier -->
+                <button id="boutonCopier" onclick="copier()">
+                    <i class="fa fa-copy"></i>
+                </button>
+            </div>
 		</form>
 
 	</div>
